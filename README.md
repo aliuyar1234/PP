@@ -42,3 +42,12 @@ This project is a full-stack file renaming service that uses OCR and AI to sugge
 - **Method:** `POST`
 - **Headers:** `x-api-key: your-secret-api-key`
 - **Body:** `file` (the file to be renamed)
+## Batch OCR Utility
+
+This repository also provides a command-line tool to scan a folder for PDF files. The tool examines the first three pages of each PDF to determine if the text is searchable and applies OCR only to non-searchable documents. Original files are copied to a `backup_originals` folder before OCR is performed, and a summary of actions is written to `ocr_log.txt`.
+
+Run it with:
+
+```bash
+python pdf_ocr_processor.py /path/to/folder
+```
